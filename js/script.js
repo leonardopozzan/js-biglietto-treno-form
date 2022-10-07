@@ -9,25 +9,34 @@
 
 //Definizione variabili 
 let km = 0;
-let eta = 0;
+let age = 0;
 const euro_1Km = 0.21;
 const saleMinor = 0.2;
 const saleOver65 = 0.4;
 let price = 0;
+let btn;
 
 //Assegnazioni variabili
+btn = document.getElementById('btn');
 
+const calculate = function(){
+    //Assegnazioni variabili
+    km = parseFloat(document.getElementById('distance').value);
+    age = parseInt(document.getElementById('age').value);
 
-if (isNaN(km) || isNaN(eta)){
-    document.getElementById('my-title').innerHTML = 'Ricarica la pagina e inserisci i dati nel formato corretto per conoscere il prezzo del biglietto';
-}else{
-    price = euro_1Km * km;
-    if (eta < 18){
-        price *= (1 - saleMinor);
-    } else if (eta > 65){
-        price *= (1 - saleOver65);
+    //Esecuzione dei calcoli
+    if (isNaN(km) || isNaN(age)){
+        document.getElementById('my-price').innerHTML = 'Inserisci i dati nel formato corretto per conoscere il prezzo del biglietto';
+    }else{
+        price = euro_1Km * km;
+        if (age < 18){
+            price *= (1 - saleMinor);
+        } else if (age > 65){
+            price *= (1 - saleOver65);
+        }
+        price = price.toFixed(2);
+        document.getElementById('my-price').innerHTML = price + ' &euro;';
     }
-    price = price.toFixed(2);
-    document.getElementById('my-price').innerHTML = price + ' &euro;';
 }
 
+btn.addEventListener('click', calculate)
