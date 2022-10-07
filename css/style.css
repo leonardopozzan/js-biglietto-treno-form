@@ -1,20 +1,43 @@
+/***************** Utility *******************/
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 body{
-    background-color:#248AA3;
-    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(#D74545, rgba(67, 96, 201));
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
+:root{
+    --dark-green: rgba(0, 106, 101, 1);
+    --red: rgba(187, 36, 61, 1);
+    --blue: rgba(12, 65, 119, 1);
+}
+
+/***************** Common *******************/
 .wrapper{
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #F0BF92;
-    height: 40vh;
-    width: 60vw;
-    min-height: 250px;
-    min-width: 500px;
+    background-color: white;
+    width: 1000px; height: 500px;
+    overflow: hidden;
+}
+header{
+    background-color: var(--blue);
+}
+.my-container{
+    width: 93%;
+    margin: auto;
+}
+.img-box{
+    width: 60px;
+}
+footer{
+    background-color: var(--red);
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

@@ -19,6 +19,7 @@ let btn;
 //Assegnazioni variabili
 btn = document.getElementById('btn');
 
+//Funzione per il calcolo del prezzo del biglietto
 const calculate = function(){
     //Assegnazioni variabili
     km = parseFloat(document.getElementById('distance').value);
